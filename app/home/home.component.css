@@ -1,8 +1,4 @@
 
-.action-bar__login-button{
-    color: red !important;
-}
-
 .page {
   align-items: center;
   flex-direction: column;
@@ -20,7 +16,6 @@
   font-weight: bold;
 }
 .header {
-  horizontal-align: center;
   font-size: 25;
   font-weight: 600;
   margin-bottom: 70;

@@ -1,8 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { user } from "./user.interface";
-import { Router } from "@angular/router";
-import { alert, prompt } from "tns-core-modules/ui/dialogs";
-import { Page } from "tns-core-modules/ui/page";
+import { HomeService } from "./home.service";
 
 @Component({
     selector: "Home",
@@ -13,10 +11,32 @@ import { Page } from "tns-core-modules/ui/page";
 
 export class HomeComponent {
     public login = false;
-    public user: user;
+    public usr: user = {
+        childEmail: "",
+        parentEmail:'',
+        password:"",
+        name:"",
+        parentCellphone:"",
+        childCellphone:"",
+        childName: "",
+    };
+    email:string;
     text: string = "Login";
+    homeService: HomeService;
+    isParent: boolean;
+
+    constructor(homeService: HomeService){
+        this.homeService = homeService;
+    }
+
     onLogin() { 
         this.login = !this.login;
         this.text = this.login === true ? 'Sign Up' : 'Login'
+    }
+
+    emailChange(event){
+        this.usr.parentEmail = event.value;
+        let emailType = this.homeService.getEmailType(event);
+        this.isParent = emailType.isParent;
     }
 }
