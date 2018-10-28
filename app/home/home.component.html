@@ -16,51 +16,6 @@
 		</Button>
 	</FlexboxLayout>
 </ActionBar>
-
-<FlexboxLayout 
-	class="page" 
-	*ngIf="login">
-	<StackLayout 
-		class="form">
-		<Image 
-			class="logo" 
-			src="~/images/logo.png">
-		</Image>
-		<Label 
-			class="header" 
-			text="Bullying Detector">
-		</Label>
-		<StackLayout 
-			class="input-field">
-			<TextField 
-				class="input" 
-				hint="Email" 
-				[ngModel]="email"
-				(textChange)="emailChange($event)" >
-			</TextField>
-			<StackLayout 
-				class="hr-light">
-			</StackLayout>
-		</StackLayout>
-
-		<StackLayout  
-			*ngIf="isParent"
-			class="input-field">
-			<TextField 
-				#password 
-				class="input" 
-				hint="Password" 
-				secure="true" >
-			</TextField>
-			<StackLayout 
-				class="hr-light">
-			</StackLayout>
-		</StackLayout>
-
-		<Button 
-			text="log in" 
-			(tap)="submit()" 
-			class="btn btn-primary m-t-20">
-		</Button>
-	</StackLayout>
-</FlexboxLayout>
+<login
+	[login]="login"
+></login>
