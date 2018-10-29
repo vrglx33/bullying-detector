@@ -11,13 +11,13 @@ import { SignUpService } from "./signup.service";
 
 export class SignUpComponent {
     public usr: user = {
-        childEmail: "",
-        parentEmail:'',
-        password:"",
         name:"",
         parentCellphone:"",
         childCellphone:"",
         childName: "",
+        childEmail: "",
+        parentEmail:'',
+        password:"",
     };
     signUpService: SignUpService;
 
