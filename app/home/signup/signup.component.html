@@ -1,6 +1,6 @@
 <FlexboxLayout 
     class="page" >
-    <ScrollView ios.pagingEnabled="true" androi>
+    <ScrollView orientation="vertical">
         <StackLayout 
             class="form">
             <Image 
@@ -11,12 +11,42 @@
                 class="header" 
                 text="Bullying Detector">
             </Label>
+
             <StackLayout 
                 class="input-field">
                 <TextField 
                     class="input" 
                     hint="Parent Email" 
                     [(ngModel)]="usr.parentEmail" >
+                </TextField>
+                <StackLayout 
+                    class="hr-light">
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout  
+                *ngIf="isParent"
+                class="input-field">
+                <TextField 
+                    class="input" 
+                    hint="Child Email"
+                    [(ngmodel)]="usr.childEmail" 
+                    >
+                </TextField>
+                <StackLayout 
+                    class="hr-light">
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout  
+                *ngIf="isParent"
+                class="input-field">
+                <TextField #password 
+                    class="input" 
+                    hint="Password" 
+                    [(ngModel)]="usr.password"
+                    secure="true"  
+                    >
                 </TextField>
                 <StackLayout 
                     class="hr-light">
@@ -35,6 +65,7 @@
                     class="hr-light">
                 </StackLayout>
             </StackLayout>
+            
             <StackLayout 
                 class="input-field">
                 <TextField 
@@ -68,35 +99,6 @@
                     class="input" 
                     hint="Child Cellphone" 
                     [(ngModel)] = "usr.childCellphone"
-                    >
-                </TextField>
-                <StackLayout 
-                    class="hr-light">
-                </StackLayout>
-            </StackLayout>
-
-            <StackLayout  
-                *ngIf="isParent"
-                class="input-field">
-                <TextField 
-                    class="input" 
-                    hint="Child Email"
-                    [(ngmodel)]="usr.childEmail" 
-                    >
-                </TextField>
-                <StackLayout 
-                    class="hr-light">
-                </StackLayout>
-            </StackLayout>
-
-            <StackLayout  
-                *ngIf="isParent"
-                class="input-field">
-                <TextField #password 
-                    class="input" 
-                    hint="Password" 
-                    [(ngModel)]="usr.password"
-                    secure="true"  
                     >
                 </TextField>
                 <StackLayout 
