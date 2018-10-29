@@ -11,6 +11,8 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 import { HomeRoutingModule } from "./home-routing.module";
 import { HomeComponent } from "./home.component";
+import { LoginComponent } from "./login/login.component";
+import { SignUpComponent } from "./signup/signup.component";
 
 @NgModule({
     imports: [
@@ -26,7 +28,9 @@ import { HomeComponent } from "./home.component";
         NativeScriptFormsModule
     ],
     declarations: [
-        HomeComponent
+        HomeComponent,
+        LoginComponent,
+        SignUpComponent,
     ],
     schemas: [
         NO_ERRORS_SCHEMA

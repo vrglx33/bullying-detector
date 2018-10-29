@@ -1,0 +1,114 @@
+<FlexboxLayout 
+    class="page" >
+    <ScrollView ios.pagingEnabled="true" androi>
+        <StackLayout 
+            class="form">
+            <Image 
+                class="logo" 
+                src="~/images/logo.png">
+            </Image>
+            <Label 
+                class="header" 
+                text="Bullying Detector">
+            </Label>
+            <StackLayout 
+                class="input-field">
+                <TextField 
+                    class="input" 
+                    hint="Parent Email" 
+                    [(ngModel)]="usr.parentEmail" >
+                </TextField>
+                <StackLayout 
+                    class="hr-light">
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout  
+                *ngIf="isParent"
+                class="input-field">
+                <TextField 
+                    class="input" 
+                    hint="Parent Cellphone" 
+                    [(ngModel)] = "usr.parentCellphone" >
+                </TextField>
+                <StackLayout 
+                    class="hr-light">
+                </StackLayout>
+            </StackLayout>
+            <StackLayout 
+                class="input-field">
+                <TextField 
+                    class="input" 
+                    hint="Parent Name" 
+                    [(ngModel)]= "usr.name"
+                    >
+                </TextField>
+                <StackLayout 
+                    class="hr-light">
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout  
+                *ngIf="isParent"
+                class="input-field">
+                <TextField 
+                    class="input" 
+                    hint="Child Name" 
+                    [(ngmModel)]="usr.childName"
+                    >
+                </TextField>
+                <StackLayout 
+                    class="hr-light">
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout 
+                class="input-field">
+                <TextField 
+                    class="input" 
+                    hint="Child Cellphone" 
+                    [(ngModel)] = "usr.childCellphone"
+                    >
+                </TextField>
+                <StackLayout 
+                    class="hr-light">
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout  
+                *ngIf="isParent"
+                class="input-field">
+                <TextField 
+                    class="input" 
+                    hint="Child Email"
+                    [(ngmodel)]="usr.childEmail" 
+                    >
+                </TextField>
+                <StackLayout 
+                    class="hr-light">
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout  
+                *ngIf="isParent"
+                class="input-field">
+                <TextField #password 
+                    class="input" 
+                    hint="Password" 
+                    [(ngModel)]="usr.password"
+                    secure="true"  
+                    >
+                </TextField>
+                <StackLayout 
+                    class="hr-light">
+                </StackLayout>
+            </StackLayout>
+
+            <Button 
+                text="Register" 
+                (tap)="submit()" 
+                class="btn btn-primary m-t-20">
+            </Button>
+        </StackLayout>
+    </ScrollView>
+</FlexboxLayout>

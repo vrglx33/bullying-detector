@@ -16,6 +16,9 @@
 		</Button>
 	</FlexboxLayout>
 </ActionBar>
-<login
-	[login]="login"
-></login>
+<app-login
+	*ngIf = "login">
+</app-login>
+<app-signup
+	*ngIf = "!login">
+</app-signup>
