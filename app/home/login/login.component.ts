@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { user } from "./user.interface";
 import { LoginService } from "./login.service";
+import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
     selector: "app-login",
@@ -24,7 +25,9 @@ export class LoginComponent {
     loginService: LoginService;
     isParent: boolean;
 
-    constructor(loginService: LoginService){
+    constructor(
+            loginService: LoginService,
+            private routerExtensions: RouterExtensions){
         this.loginService = loginService;
     }
 
@@ -32,5 +35,9 @@ export class LoginComponent {
         this.usr.parentEmail = event.value;
         let emailType = this.loginService.getEmailType(event);
         this.isParent = emailType.isParent;
+    }
+
+    submit(){
+        this.routerExtensions.navigate(["/dashboard"]);
     }
 }
