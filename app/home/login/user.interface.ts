@@ -1,9 +1,9 @@
 export interface user { 
     name: string;
     parentCellphone: string;
-    childCellphone: string;
+    kidCellphone: string;
     parentEmail:string;
-    childEmail:string;
+    kidEmail:string;
     password: string;
-    childName: string;
+    kidName: string;
 }

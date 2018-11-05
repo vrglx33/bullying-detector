@@ -13,9 +13,9 @@ export class SignUpComponent {
     public usr: user = {
         name:"",
         parentCellphone:"",
-        childCellphone:"",
-        childName: "",
-        childEmail: "",
+        kidCellphone: "",
+        kidName: "",
+        kidEmail: "",
         parentEmail:'',
         password:"",
     };

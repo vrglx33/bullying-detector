@@ -28,8 +28,59 @@
                 class="input-field">
                 <TextField 
                     class="input" 
+                    hint="Parent Cellphone" 
+                    [(ngModel)] = "usr.parentCellphone" >
+                </TextField>
+                <StackLayout 
+                    class="hr-light">
+                </StackLayout>
+            </StackLayout>
+            
+            <StackLayout 
+                class="input-field">
+                <TextField 
+                    class="input" 
+                    hint="Parent Name" 
+                    [(ngModel)]= "usr.parentName"
+                    >
+                </TextField>
+                <StackLayout 
+                    class="hr-light">
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout  
+                class="input-field">
+                <TextField 
+                    class="input" 
+                    hint="Child Name" 
+                    [(ngModel)]="usr.kidName"
+                    >
+                </TextField>
+                <StackLayout 
+                    class="hr-light">
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout 
+                class="input-field">
+                <TextField 
+                    class="input" 
+                    hint="Child Cellphone" 
+                    [(ngModel)] = "usr.kidCellphone"
+                    >
+                </TextField>
+                <StackLayout 
+                    class="hr-light">
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout  
+                class="input-field">
+                <TextField 
+                    class="input" 
                     hint="Child Email"
-                    [(ngModel)]="usr.childEmail" 
+                    [(ngModel)]="usr.kidEmail" 
                     >
                 </TextField>
                 <StackLayout 
@@ -51,56 +102,6 @@
                 </StackLayout>
             </StackLayout>
 
-            <StackLayout  
-                class="input-field">
-                <TextField 
-                    class="input" 
-                    hint="Parent Cellphone" 
-                    [(ngModel)] = "usr.parentCellphone" >
-                </TextField>
-                <StackLayout 
-                    class="hr-light">
-                </StackLayout>
-            </StackLayout>
-            
-            <StackLayout 
-                class="input-field">
-                <TextField 
-                    class="input" 
-                    hint="Parent Name" 
-                    [(ngModel)]= "usr.name"
-                    >
-                </TextField>
-                <StackLayout 
-                    class="hr-light">
-                </StackLayout>
-            </StackLayout>
-
-            <StackLayout  
-                class="input-field">
-                <TextField 
-                    class="input" 
-                    hint="Child Name" 
-                    [(ngModel)]="usr.childName"
-                    >
-                </TextField>
-                <StackLayout 
-                    class="hr-light">
-                </StackLayout>
-            </StackLayout>
-
-            <StackLayout 
-                class="input-field">
-                <TextField 
-                    class="input" 
-                    hint="Child Cellphone" 
-                    [(ngModel)] = "usr.childCellphone"
-                    >
-                </TextField>
-                <StackLayout 
-                    class="hr-light">
-                </StackLayout>
-            </StackLayout>
 
             <Button 
                 text="Register" 
