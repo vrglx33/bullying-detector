@@ -1,38 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Users } from './users.mock';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
-
+    private http : HttpClient;
+    constructor(http: HttpClient){
+        this.http = http;
+    }
     getEmailType(email){
-        let users = Users
-            .filter(
-                user => user.parentEmail.toLowerCase() === email.value.toLowerCase()
-                );
-        
-        if(users.length){
-            return { 
-                user: users[0], 
-                isParent: true
-            };
-        }
-
-        users = Users
-            .filter(
-                user => user.childEmail === email.value
-                );
-
-        if(users.length){
-            return { 
-                user: users[0], 
-                isParent: false
-            };
-        }
-
-        return { 
-            isParent: false
-        };
+        return this.http.get("http://localhost:8080/users/verify/mail?"+email);
     }
 }

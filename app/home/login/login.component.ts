@@ -11,19 +11,12 @@ import { RouterExtensions } from "nativescript-angular/router";
 })
 
 export class LoginComponent {
-    public usr: user = {
-        childEmail: "",
-        parentEmail:'',
-        password:"",
-        name:"",
-        parentCellphone:"",
-        childCellphone:"",
-        childName: "",
-    };
     email:string;
     text: string = "Login";
     loginService: LoginService;
     isParent: boolean;
+    isVerified: boolean;
+    password: string;
 
     constructor(
             loginService: LoginService,
@@ -31,13 +24,16 @@ export class LoginComponent {
         this.loginService = loginService;
     }
 
-    emailChange(event){
-        this.usr.parentEmail = event.value;
-        let emailType = this.loginService.getEmailType(event);
-        this.isParent = emailType.isParent;
+    submit(){
+        
     }
 
-    submit(){
-        this.routerExtensions.navigate(["/dashboard"]);
+    verify(){
+        if(this.email != ''){
+            this.loginService.getEmailType(this.email).subscribe((response) => {
+                this.isParent = response === 'parent';
+                this.isVerified = response === 'parent' || response === 'child';
+            });
+        }
     }
 }

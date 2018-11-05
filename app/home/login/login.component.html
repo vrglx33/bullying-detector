@@ -16,8 +16,7 @@ class="page">
             <TextField 
                 class="input" 
                 hint="Email" 
-                [ngModel]="email"
-                (textChange)="emailChange($event)" >
+                [(ngModel)]="email" >
             </TextField>
             <StackLayout 
                 class="hr-light">
@@ -31,7 +30,8 @@ class="page">
                 #password 
                 class="input" 
                 hint="Password" 
-                secure="true" >
+                secure="true"
+                [(ngModel)]="password" >
             </TextField>
             <StackLayout 
                 class="hr-light">
@@ -39,7 +39,14 @@ class="page">
         </StackLayout>
 
         <Button 
-            text="log in" 
+            text="Verify Mail" 
+            (tap)="verify()" 
+            class="btn btn-primary m-t-20">
+        </Button>
+
+        <Button 
+            text="Login" 
+            *ngif="verified"
             (tap)="submit()" 
             class="btn btn-primary m-t-20">
         </Button>
