@@ -25,6 +25,6 @@ export class SignUpComponent {
         this.signUpService = signUpService;
     }
     submit() {
-        console.log(this.usr);
+        this.signUpService.registerUser(this.usr).subscribe((response)=>console.log(response));
     }
 }

@@ -13,6 +13,7 @@ import { HomeRoutingModule } from "./home-routing.module";
 import { HomeComponent } from "./home.component";
 import { LoginComponent } from "./login/login.component";
 import { SignUpComponent } from "./signup/signup.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
     imports: [
@@ -25,7 +26,7 @@ import { SignUpComponent } from "./signup/signup.component";
         NativeScriptUIGaugeModule,
         NativeScriptCommonModule,
         HomeRoutingModule,
-        NativeScriptFormsModule
+        NativeScriptFormsModule,
     ],
     declarations: [
         HomeComponent,
