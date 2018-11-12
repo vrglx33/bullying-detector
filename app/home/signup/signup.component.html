@@ -17,7 +17,9 @@
                 <TextField 
                     class="input" 
                     hint="Parent Email" 
-                    [(ngModel)]="usr.parentEmail" >
+                    [ngModel]="usr.parentEmail" 
+                    (ngModelChange)='usr.parentEmail = $event'
+                    >
                 </TextField>
                 <StackLayout 
                     class="hr-light">
@@ -29,7 +31,8 @@
                 <TextField 
                     class="input" 
                     hint="Parent Cellphone" 
-                    [(ngModel)] = "usr.parentCellphone" >
+                    (ngModelChange)='usr.parentCellphone = $event'
+                    [ngModel] = "usr.parentCellphone" >
                 </TextField>
                 <StackLayout 
                     class="hr-light">
@@ -41,7 +44,8 @@
                 <TextField 
                     class="input" 
                     hint="Parent Name" 
-                    [(ngModel)]= "usr.parentName"
+                    (ngModelChange)='usr.parentName = $event'
+                    [ngModel]= "usr.parentName"
                     >
                 </TextField>
                 <StackLayout 
@@ -54,7 +58,8 @@
                 <TextField 
                     class="input" 
                     hint="Child Name" 
-                    [(ngModel)]="usr.kidName"
+                    (ngModelChange)='usr.kidName = $event'
+                    [ngModel]="usr.kidName"
                     >
                 </TextField>
                 <StackLayout 
@@ -67,7 +72,8 @@
                 <TextField 
                     class="input" 
                     hint="Child Cellphone" 
-                    [(ngModel)] = "usr.kidCellphone"
+                    (ngModelChange)='usr.kidCellphone = $event'
+                    [ngModel] = "usr.kidCellphone"
                     >
                 </TextField>
                 <StackLayout 
@@ -80,7 +86,8 @@
                 <TextField 
                     class="input" 
                     hint="Child Email"
-                    [(ngModel)]="usr.kidEmail" 
+                    (ngModelChange)='usr.kidEmail = $event'
+                    [ngModel]="usr.kidEmail" 
                     >
                 </TextField>
                 <StackLayout 
@@ -93,7 +100,8 @@
                 <TextField #password 
                     class="input" 
                     hint="Password" 
-                    [(ngModel)]="usr.password"
+                    (ngModelChange)='usr.password = $event'
+                    [ngModel]="usr.password"
                     secure="true"  
                     >
                 </TextField>

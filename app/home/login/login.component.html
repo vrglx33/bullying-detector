@@ -16,7 +16,8 @@ class="page">
             <TextField 
                 class="input" 
                 hint="Email" 
-                [(ngModel)]="email" >
+                [ngModel]='email' 
+                (ngModelChange)='email = $event'>
             </TextField>
             <StackLayout 
                 class="hr-light">
@@ -27,11 +28,11 @@ class="page">
             *ngIf="isParent"
             class="input-field">
             <TextField 
-                #password 
                 class="input" 
                 hint="Password" 
                 secure="true"
-                [(ngModel)]="password" >
+                [ngModel]="password" 
+                (ngModelChange)='password = $event'>
             </TextField>
             <StackLayout 
                 class="hr-light">

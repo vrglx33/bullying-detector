@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { user } from "./user.interface";
 import { LoginService } from "./login.service";
 import { RouterExtensions } from "nativescript-angular/router";
 
