@@ -11,11 +11,25 @@
 </ActionBar>
 <FlexboxLayout 
 class="page">
-    <StackLayout>
-        <Button 
-            text="Start Listening" 
-            (tap)="startRecording()"
-            class="btn btn-primary m-t-20">
-        </Button>
-    </StackLayout>
+	<StackLayout>
+		<Button 
+			text="Start Listening" 
+			*ngIf = "!isRecording"
+			(tap)="startRecording()"
+			class="btn btn-primary m-t-20">
+		</Button>
+	</StackLayout>
+	<StackLayout>
+		<Button 
+			*ngIf = "isRecording"
+			text="Stop Listening" 
+			(tap)="stopRecording()"
+			class="btn btn-primary m-t-20">
+		</Button>
+	</StackLayout>
+	
+	<StackLayout>
+		<Label textWrap="true" text="Maybe you should review the following recorded text" class="h2 description-label"></Label>
+		<Label textWrap="true" [text]="textToReview" class="h2 description-label"></Label>
+	</StackLayout>
 </FlexboxLayout>
