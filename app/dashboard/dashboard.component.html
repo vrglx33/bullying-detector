@@ -1,3 +1,21 @@
-<ActionBar title="Home" class="action-bar">
-	logout
+<ActionBar 
+	title="Dashboard" 
+	class="action-bar">
+	<FlexboxLayout>
+		<Button 
+			class="action-bar__login-button" 
+			text="Logout" 
+			(tap)="goStart()">
+		</Button>
+	</FlexboxLayout>
 </ActionBar>
+<FlexboxLayout 
+class="page">
+    <StackLayout>
+        <Button 
+            text="Start Listening" 
+            (tap)="startRecording()"
+            class="btn btn-primary m-t-20">
+        </Button>
+    </StackLayout>
+</FlexboxLayout>

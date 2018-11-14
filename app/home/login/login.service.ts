@@ -10,6 +10,16 @@ export class LoginService {
         this.http = http;
     }
     getEmailType(email){
-        return this.http.get("http://localhost:8080/users/verify/mail?"+email);
+        return fetch("http://127.0.0.1:8080/users/verify/mail?email="+email);
+    }
+    login(user){
+        return fetch("http://127.0.0.1:8080/login",{ 
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }, 
+            body: JSON.stringify(user),
+          });
     }
 }

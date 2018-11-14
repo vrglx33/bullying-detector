@@ -41,13 +41,14 @@ class="page">
 
         <Button 
             text="Verify Mail" 
+            *ngIf="!isVerified"
             (tap)="verify()" 
             class="btn btn-primary m-t-20">
         </Button>
 
         <Button 
             text="Login" 
-            *ngIf="verified"
+            *ngIf="isVerified"
             (tap)="submit()" 
             class="btn btn-primary m-t-20">
         </Button>

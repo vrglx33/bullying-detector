@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { LoginService } from "./login.service";
-import { RouterExtensions } from "nativescript-angular/router";
+import * as localStorage from 'nativescript-localstorage';
+import { Router } from "@angular/router";
 
 @Component({
     selector: "app-login",
@@ -16,23 +17,36 @@ export class LoginComponent {
     isParent: boolean;
     isVerified: boolean;
     password: string;
+    router: Router;
 
     constructor(
             loginService: LoginService,
-            private routerExtensions: RouterExtensions){
+            router: Router){
+        this.router = router;
         this.loginService = loginService;
     }
 
     submit(){
-        
+        this.loginService.login({
+            username: this.email,
+            password: this.password
+        }).then(response => {
+            if(response.headers.get("authorization") && response.status === 200){
+                localStorage.setItem('jwtToken', response.headers.get("authorization"));
+                this.router.navigate(['/dashboard']);
+            }
+        });
     }
 
     verify(){
         if(this.email != ''){
-            this.loginService.getEmailType(this.email).subscribe((response) => {
-                this.isParent = response === 'parent';
-                this.isVerified = response === 'parent' || response === 'child';
-            });
+            this.loginService
+                .getEmailType(this.email)
+                .then((response) => response.json())
+                .then((json)=>{
+                    this.isParent = json.status === 'parent';
+                    this.isVerified = json.status === 'parent' || json.status === 'child';
+                });
         }
     }
 }
